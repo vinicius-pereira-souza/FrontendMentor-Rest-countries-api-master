@@ -1,12 +1,9 @@
 export default function Home() {
   return (
-    <div className="text-sm">
-      <header>
-        <div>
-          <h1>Where in the world?</h1>
-          <button>alterar tema</button>
-        </div>
-      </header>
+    <div className="text-sm px-8">
+      <div className="max-w-[1280px] mx-auto">
+        <p>página</p>
+      </div>
     </div>
   );
 }

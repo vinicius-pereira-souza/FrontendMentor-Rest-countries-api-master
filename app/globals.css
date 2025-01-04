@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  transition: all 150ms;
+}

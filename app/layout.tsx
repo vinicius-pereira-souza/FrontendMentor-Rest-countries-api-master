@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { nunito_sans } from "./ui/fonts";
 
 import "./globals.css";
+import Providers from "./providers/providers";
+import Header from "./ui/header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${nunito_sans.className} antialiased min-h-screen`}>
-        {children}
+      <body
+        className={`${nunito_sans.className} antialiased min-h-screen bg-white dark:bg-darkBlueBg`}
+      >
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
       </body>
     </html>
   );
