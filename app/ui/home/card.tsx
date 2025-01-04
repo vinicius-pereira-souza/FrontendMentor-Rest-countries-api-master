@@ -21,7 +21,7 @@ export default function Card({
     <>
       <article
         onClick={() => router.push(`/${name}`)}
-        className="max-w-[263px] text-lightGrayBg cursor-pointer shadow-md shadow-gray-200 dark:shadow-none"
+        className="max-w-[263px] cursor-pointer theme-shadow"
       >
         <section>
           <Image
@@ -32,10 +32,7 @@ export default function Card({
             className="rounded-t-md"
           />
         </section>
-        <section
-          className="bg-white dark:bg-darkBlue pt-6 pb-11 px-6 rounded-b-md
-           text-darkBlueText dark:text-lightGrayBg"
-        >
+        <section className="theme-bg pt-6 pb-11 px-6 rounded-b-md">
           <h2 className="text-[19px] font-extrabold tracking-[3%] mb-4">
             Germany
           </h2>

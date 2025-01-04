@@ -5,3 +5,17 @@
 * {
   transition: all 150ms;
 }
+
+select {
+  appearance: none;
+}
+
+@layer base {
+  .theme-bg {
+    @apply bg-white dark:bg-darkBlue;
+  }
+
+  .theme-shadow {
+    @apply shadow-md  shadow-gray-200 dark:shadow-none;
+  }
+}
