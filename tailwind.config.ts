@@ -9,8 +9,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        darkBlue: "#2b3945", // Dark Mode Elements
+        darkBlueBg: "#202c37", // Dark Mode Background
+        darkBlueText: "#111517", // Light Mode Text
+        darkGray: "#858585", // Light Mode Input
+        lightGrayBg: "#fafafa", // Light Mode Background
+        // Dark Mode Text & Light Mode Elements
       },
     },
   },
