@@ -7,7 +7,7 @@ export default function Header() {
   const { theme, handleWitchTheme } = useTheme();
 
   return (
-    <header className="py-6 px-8 shadow-md shadow-lightGrayBg dark:shadow-none dark:bg-darkBlue mb-6 md:mb-11">
+    <header className="py-6 px-8 shadow shadow-gray-200 dark:shadow-none bg-white dark:bg-darkBlue mb-6 md:mb-11">
       <div className="max-w-[1280px] mx-auto flex items-center justify-between">
         <h1 className="text-lg mdtext-[27px] lg:text-2xl font-extrabold tracking-[2%] text-darkBlueText dark:text-lightGrayBg">
           Where in the world?

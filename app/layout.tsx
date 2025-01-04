@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${nunito_sans.className} antialiased min-h-screen bg-white dark:bg-darkBlueBg`}
+        className={`${nunito_sans.className} antialiased min-h-screen bg-lightGrayBg dark:bg-darkBlueBg`}
       >
         <Providers>
           <Header />
