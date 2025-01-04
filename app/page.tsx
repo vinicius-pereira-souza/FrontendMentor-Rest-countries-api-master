@@ -1,5 +1,6 @@
 import Card from "@/app/ui/home/card";
 import { FilterOptions, FilterSearchForm } from "./ui/home/filter";
+import { SkeletonCard } from "./ui/skeletons";
 
 export default function Home() {
   return (
@@ -31,41 +32,7 @@ export default function Home() {
             region="Europe"
             capital="Berlin"
           />
-          <Card
-            url="https://flagcdn.com/de.svg"
-            name="Germany"
-            population={83240525}
-            region="Europe"
-            capital="Berlin"
-          />
-          <Card
-            url="https://flagcdn.com/de.svg"
-            name="Germany"
-            population={83240525}
-            region="Europe"
-            capital="Berlin"
-          />
-          <Card
-            url="https://flagcdn.com/de.svg"
-            name="Germany"
-            population={83240525}
-            region="Europe"
-            capital="Berlin"
-          />
-          <Card
-            url="https://flagcdn.com/de.svg"
-            name="Germany"
-            population={83240525}
-            region="Europe"
-            capital="Berlin"
-          />
-          <Card
-            url="https://flagcdn.com/de.svg"
-            name="Germany"
-            population={83240525}
-            region="Europe"
-            capital="Berlin"
-          />
+          <SkeletonCard />
         </main>
       </div>
     </div>

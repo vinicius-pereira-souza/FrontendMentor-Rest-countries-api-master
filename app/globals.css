@@ -10,6 +10,15 @@ select {
   appearance: none;
 }
 
+.details-country li {
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.details-country li > span {
+  font-weight: 300;
+}
+
 @layer base {
   .theme-bg {
     @apply bg-white dark:bg-darkBlue;
