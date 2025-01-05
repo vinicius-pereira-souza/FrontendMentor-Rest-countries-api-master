@@ -1,6 +1,6 @@
 import Card from "@/app/ui/home/card";
-import { FilterOptions, FilterSearchForm } from "./ui/home/filter";
-import { SkeletonCard } from "./ui/skeletons";
+import { FilterOptions, FilterSearchForm } from "@/app/ui/home/filter";
+import { SkeletonCard } from "@/app/ui/skeletons";
 
 export default function Home() {
   return (

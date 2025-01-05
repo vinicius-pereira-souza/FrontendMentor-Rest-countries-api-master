@@ -2,12 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaArrowLeftLong } from "react-icons/fa6";
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ country: string }>;
-}) {
-  console.log((await params).country);
+export default async function Page() {
   return (
     <div className="text-base px-8 pb-28 pt-4">
       <div className="max-w-[1280px] mx-auto min-h-[80vh] ">
@@ -18,7 +13,7 @@ export default async function Page({
           <FaArrowLeftLong /> Back
         </Link>
 
-        <article className="mt-[75px] md:mt-[122px] lg:mt-[77px] mx-auto">
+        <article className="mt-[75px] md:mt-[122px] lg:mt-[77px] mx-auto lg:flex items-center justify-around">
           <section>
             <Image
               src={"https://flagcdn.com/w320/de.png"}
@@ -29,7 +24,7 @@ export default async function Page({
           </section>
           <section>
             <h2 className="font-extrabold text-[27px] mt-14 mb-7">Germany</h2>
-            <div className="details-country">
+            <div className="details-country lg:flex items-start">
               <ul className="flex flex-col gap-y-4 mb-14">
                 <li>
                   Native Name: <span>German</span>

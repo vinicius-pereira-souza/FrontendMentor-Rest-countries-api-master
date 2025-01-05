@@ -18,13 +18,25 @@ export function ThemeContextProvider({
 }) {
   const [theme, setTheme] = useState<boolean>(false);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const storageTheme: string | null = localStorage.getItem("theme");
+    const html = document.querySelector("html");
+
+    if (storageTheme) html!.classList.add("dark");
+    if (!storageTheme) localStorage.setItem("theme", "");
+  }, []);
 
   const handleWitchTheme = () => {
-    setTheme((prevState) => !prevState);
-
     const html = document.querySelector("html");
     html!.classList.toggle("dark");
+
+    if (html!.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "");
+    }
+
+    setTheme((prevState) => !prevState);
   };
 
   return (
