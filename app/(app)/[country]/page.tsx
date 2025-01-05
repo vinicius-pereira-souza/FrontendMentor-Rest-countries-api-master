@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import CardDetails from "@/app/ui/country/cardDetails";
+// import { CardDetailsSkeleton } from "@/app/ui/skeletons";
 
 export default async function Page() {
   return (
@@ -13,6 +14,7 @@ export default async function Page() {
           <FaArrowLeftLong /> Back
         </Link>
         <CardDetails />
+        {/* <CardDetailsSkeleton /> */}
       </div>
     </div>
   );
