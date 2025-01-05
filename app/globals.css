@@ -11,12 +11,14 @@ select {
 }
 
 .details-country li {
-  font-weight: 600;
+  font-weight: 300;
   font-size: 17px;
+  color: #fafafa;
 }
 
 .details-country li > span {
   font-weight: 300;
+  color: #858585;
 }
 
 @layer base {

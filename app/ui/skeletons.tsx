@@ -1,6 +1,21 @@
-export function SkeletonCard() {
+export function CardsWrapperCards() {
   return (
-    <article className="max-w-[263px] cursor-pointer theme-shadow">
+    <>
+      <CardSkeleton />
+      <CardSkeleton />
+      <CardSkeleton />
+      <CardSkeleton />
+      <CardSkeleton />
+      <CardSkeleton />
+      <CardSkeleton />
+      <CardSkeleton />
+    </>
+  );
+}
+
+export function CardSkeleton() {
+  return (
+    <article className="w-[263px] cursor-pointer theme-shadow">
       <section>
         <div className="h-[160px] w-full bg-gray-200 rounded-t-md animate-pulse"></div>
       </section>

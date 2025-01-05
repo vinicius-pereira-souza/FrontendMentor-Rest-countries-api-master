@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import CardDetails from "@/app/ui/country/cardDetails";
 
 export default async function Page() {
   return (
@@ -12,59 +12,7 @@ export default async function Page() {
         >
           <FaArrowLeftLong /> Back
         </Link>
-
-        <article className="mt-[75px] md:mt-[122px] lg:mt-[77px] mx-auto lg:flex items-center justify-around">
-          <section>
-            <Image
-              src={"https://flagcdn.com/w320/de.png"}
-              alt={`<nome> Flag`}
-              width={560}
-              height={400}
-            />
-          </section>
-          <section>
-            <h2 className="font-extrabold text-[27px] mt-14 mb-7">Germany</h2>
-            <div className="details-country lg:flex items-start">
-              <ul className="flex flex-col gap-y-4 mb-14">
-                <li>
-                  Native Name: <span>German</span>
-                </li>
-                <li>
-                  Population: <span>83240525</span>
-                </li>
-                <li>
-                  Region: <span>Europe</span>
-                </li>
-                <li>
-                  Sub Region: <span>Central Europe</span>
-                </li>
-                <li>
-                  Capital: <span>Berlin</span>
-                </li>
-              </ul>
-              <ul className="flex flex-col gap-y-4">
-                <li>
-                  Top Level Domain: <span>.de</span>
-                </li>
-                <li>
-                  Currencies: <span>Euro</span>
-                </li>
-                <li>
-                  Languages: <span>German</span>
-                </li>
-              </ul>
-            </div>
-            <footer>
-              <h3>Border Countries:</h3>
-              <div>
-                <span>ARM</span>
-                <span>AZE</span>
-                <span>RUS</span>
-                <span>TUR</span>
-              </div>
-            </footer>
-          </section>
-        </article>
+        <CardDetails />
       </div>
     </div>
   );
