@@ -1,13 +1,19 @@
 import Image from "next/image";
+import { fetchCountryByName } from "@/app/lib/data";
+import {
+  countryDetailKeys,
+  countryDetailLabels,
+} from "@/app/lib/countryDetailsConfig";
 
 export default async function CardDetails({ name }: { name: string }) {
-  console.log(name);
+  const data = await fetchCountryByName(name);
+
   return (
     <>
       <article className="mt-[75px] md:mt-[122px] lg:mt-[77px] mx-auto lg:flex lg:gap-x-[122px] items-center justify-around">
         <section className="flex-1">
           <Image
-            src={"https://flagcdn.com/w320/de.png"}
+            src={data.flags.png}
             alt={`${name} Flag`}
             width={560}
             height={400}
@@ -16,48 +22,72 @@ export default async function CardDetails({ name }: { name: string }) {
         </section>
         <section className="flex-1 mx-auto">
           <h2 className="font-extrabold text-[27px] mt-14 md:mt-0 mb-7">
-            Germany
+            {data.name}
           </h2>
           <div className="details-country md:flex items-start">
             <ul className="flex flex-col gap-y-4 mb-14 flex-1">
-              <li>
-                Native Name: <span>German</span>
-              </li>
-              <li>
-                Population: <span>83240525</span>
-              </li>
-              <li>
-                Region: <span>Europe</span>
-              </li>
-              <li>
-                Sub Region: <span>Central Europe</span>
-              </li>
-              <li>
-                Capital: <span>Berlin</span>
-              </li>
+              {countryDetailKeys.map((title: string) => (
+                <CountryDetail
+                  key={title}
+                  detailName={countryDetailLabels[title]}
+                  value={data[title]}
+                />
+              ))}
             </ul>
-            <ul className="flex flex-col gap-y-4 flex-1">
+            {/* <ul className="flex flex-col gap-y-4 flex-1">
               <li>
-                Top Level Domain: <span>.de</span>
+                Top Level Domain:{" "}
+                {data.topLevelDomain.map((item) => (
+                  <span key={item}>{item}</span>
+                ))}
+              </li>
+
+              <li>
+                Currencies:{" "}
+                <span>
+                  {data.currencies.map((item) => (
+                    <span key={item.name}>{item.name}</span>
+                  ))}
+                </span>
               </li>
               <li>
-                Currencies: <span>Euro</span>
+                Languages:{" "}
+                <span>
+                  {data.topLevelDomain.map((item) => (
+                    <span key={item}>{item}</span>
+                  ))}
+                </span>
               </li>
-              <li>
-                Languages: <span>German</span>
-              </li>
-            </ul>
+            </ul> */}
           </div>
           <footer className="lg:flex items-center gap-3">
             <h3 className="font-semibold text-nowrap text-[21px] lg:text-[17px] mb-4 md:mb-0 tracking-[-2%]">
               Border Countries:
             </h3>
             <div className="flex items-center gap-3 flex-wrap">
-              <BorderContry name="Deutsch" />
+              {data.borders.map((item: string) => (
+                <BorderContry key={item} name={item} />
+              ))}
             </div>
           </footer>
         </section>
       </article>
+    </>
+  );
+}
+
+export function CountryDetail({
+  detailName,
+  value,
+}: {
+  detailName: string;
+  value: string;
+}) {
+  return (
+    <>
+      <li className="text-[17px] font-light text-lightGrayBg">
+        {detailName}:<span className="text-darkGray ml-1">{value}</span>
+      </li>
     </>
   );
 }

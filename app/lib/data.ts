@@ -11,3 +11,14 @@ export async function fetcher(url: string) {
   const data = await fetch(url);
   return await data.json();
 }
+
+export async function fetchCountryByName(name: string) {
+  try {
+    const data = await fetch(`http://localhost:3000/api/countries/${name}`);
+    const objData = await data.json();
+    return objData[0];
+  } catch (error) {
+    console.log(error);
+    return;
+  }
+}
