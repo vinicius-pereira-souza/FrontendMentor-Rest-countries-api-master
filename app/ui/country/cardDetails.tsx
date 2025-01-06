@@ -1,13 +1,14 @@
 import Image from "next/image";
 
-export default function CardDetails() {
+export default async function CardDetails({ name }: { name: string }) {
+  console.log(name);
   return (
     <>
       <article className="mt-[75px] md:mt-[122px] lg:mt-[77px] mx-auto lg:flex lg:gap-x-[122px] items-center justify-around">
         <section className="flex-1">
           <Image
             src={"https://flagcdn.com/w320/de.png"}
-            alt={`<nome> Flag`}
+            alt={`${name} Flag`}
             width={560}
             height={400}
             className="max-w-full block mx-auto"

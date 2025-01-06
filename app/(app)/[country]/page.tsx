@@ -1,9 +1,16 @@
 import Link from "next/link";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import CardDetails from "@/app/ui/country/cardDetails";
-// import { CardDetailsSkeleton } from "@/app/ui/skeletons";
+import { Suspense } from "react";
+import { CardDetailsSkeleton } from "@/app/ui/skeletons";
 
-export default async function Page() {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ country: string }>;
+}) {
+  const { country } = await params;
+
   return (
     <div className="text-base px-8 pb-28 pt-4">
       <div className="max-w-[1280px] mx-auto min-h-[80vh] ">
@@ -13,8 +20,9 @@ export default async function Page() {
         >
           <FaArrowLeftLong /> Back
         </Link>
-        <CardDetails />
-        {/* <CardDetailsSkeleton /> */}
+        <Suspense fallback={<CardDetailsSkeleton />}>
+          <CardDetails name={country} />
+        </Suspense>
       </div>
     </div>
   );
