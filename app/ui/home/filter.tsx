@@ -1,33 +1,45 @@
 import { IoSearchSharp } from "react-icons/io5";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
-export function FilterSearchForm() {
+export default function FilterSearchForm() {
   return (
     <>
-      <form action="" className="flex-1">
-        <div className="max-w-[475px] theme-bg relative theme-shadow rounded">
-          <input
-            type="search"
-            name="search"
-            id="serach"
-            placeholder="Search for a country..."
-            className="block w-full text-sm py-5 pl-[75px] pr-4 bg-transparent outline-none placeholder:font-medium"
-          />
-          <label
-            htmlFor="search"
-            className="text-2xl absolute top-1/2 -translate-y-1/2 left-8"
-          >
-            <IoSearchSharp />
-          </label>
-        </div>
+      <form
+        action=""
+        className="w-full flex flex-col md:flex-row md:items-center md:justify-between gap-y-11 md:gap-x-3"
+      >
+        <FilterSearchInput />
+        <FilterSearchOptions />
       </form>
+    </>
+  );
+}
+
+export function FilterSearchInput() {
+  return (
+    <>
+      <div className="flex-1 max-w-[475px] theme-bg relative theme-shadow rounded">
+        <input
+          type="search"
+          name="search"
+          id="serach"
+          placeholder="Search for a country..."
+          className="block w-full text-sm py-5 pl-[75px] pr-4 bg-transparent outline-none placeholder:font-medium"
+        />
+        <label
+          htmlFor="search"
+          className="text-2xl absolute top-1/2 -translate-y-1/2 left-8"
+        >
+          <IoSearchSharp />
+        </label>
+      </div>
     </>
   );
 }
 
 const options: string[] = ["africa", "america", "asia", "europa", "oceania"];
 
-export function FilterOptions() {
+export function FilterSearchOptions() {
   return (
     <>
       <div className="relative w-[245px] theme-shadow ">
@@ -35,8 +47,8 @@ export function FilterOptions() {
           <MdKeyboardArrowDown />
         </span>
         <select
-          name="cars"
-          id="cars"
+          name="region"
+          id="region"
           className="w-full outline-none py-5 pl-7 pr-6 rounded text-darkBlueText dark:text-lightGrayBg 
         theme-bg"
         >

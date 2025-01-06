@@ -5,7 +5,7 @@ export type TypeCountryDetails = {
   region: string;
   subregion: string;
   capital: string;
-  Border: string[];
+  borders: string[];
   flags: { png: string };
   topLevelDomain: string[];
   currencies: Array<{ name: string }>;
@@ -18,4 +18,16 @@ export type TypeCard = {
   region: string;
   capital: string;
   flags: { svg: string };
+};
+
+export type CountryDetails = {
+  nativeName: string;
+  population: string;
+  region: string;
+  subregion: string;
+  capital: string;
+};
+
+export type CountryDetailLabels = {
+  [key: string]: string;
 };
