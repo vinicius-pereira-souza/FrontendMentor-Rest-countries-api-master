@@ -5,11 +5,10 @@ export type TypeCountryDetails = {
   region: string;
   subregion: string;
   capital: string;
-  borders: string[];
-  flags: { png: string };
+  flag: string;
   topLevelDomain: string[];
   currencies: Array<{ name: string }>;
-  Languages: Array<{ name: string }>;
+  languages: Array<{ name: string; nativeName: string }>;
 };
 
 export type TypeCard = {
